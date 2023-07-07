@@ -3,7 +3,7 @@ from tkinter import *
 
 calc = Tk()
 calc.geometry('320x500')
-calc.resizable(False, False)
+calc.resizable(0, 0)
 calc.title("Calculator")
 
 
@@ -12,51 +12,79 @@ calc.title("Calculator")
 
 
 def button1():
-    num1.insert(END, 1)
-
-
-print("Calculator Started!")
+    if not add.get():
+        num1.insert(END, 1)
+    else:
+        num2.insert(END, 1)
 
 
 def button2():
-    num1.insert(END, 2)
+    if not add.get():
+        num1.insert(END, 2)
+    else:
+        num2.insert(END, 2)
 
 
 def button3():
-    num1.insert(END, 3)
+    if not add.get():
+        num1.insert(END, 3)
+    else:
+        num2.insert(END, 3)
 
 
 def button4():
-    num1.insert(END, 4)
+    if not add.get():
+        num1.insert(END, 4)
+    else:
+        num2.insert(END, 4)
 
 
 def button5():
-    num1.insert(END, 5)
+    if not add.get():
+        num1.insert(END, 5)
+    else:
+        num2.insert(END, 5)
 
 
 def button6():
-    num1.insert(END, 6)
+    if not add.get():
+        num1.insert(END, 6)
+    else:
+        num2.insert(END, 6)
 
 
 def button7():
-    num1.insert(END, 7)
+    if not add.get():
+        num1.insert(END, 7)
+    else:
+        num2.insert(END, 7)
 
 
 def button8():
-    num1.insert(END, 8)
+    if not add.get():
+        num1.insert(END, 8)
+    else:
+        num2.insert(END, 8)
 
 
 def button9():
-    num1.insert(END, 9)
+    if not add.get():
+        num1.insert(END, 9)
+    else:
+        num2.insert(END, 9)
 
 
 def button0():
-    num1.insert(END, 0)
+    if not add.get():
+        num1.insert(END, 0)
+    else:
+        num2.insert(END, 0)
 
 
 def adds():
     add.delete(0, END)
     add.insert(END, '+')
+  
 
 
 def mines():
@@ -64,22 +92,22 @@ def mines():
     add.insert(END, '-')
 
 
+
 def multiple():
     add.delete(0, END)
     add.insert(END, '*')
 
 
+
 def divide():
     add.delete(0, END)
     add.insert(END, '/')
+
+
 def percentage():
     add.delete(0, END)
     add.insert(END, '%')
 
-
-def input1():
-    num1.insert(input())
-    num2.insert(input())
 
 
 def delete():
@@ -109,10 +137,10 @@ def equals():
         c = int(a) / int(b)
         result.insert(END, c)
     if add.get() == '%':
-        c = int(a) * int(b) //100
+        c = int(a) * int(b) // 100
         result.insert(END, c)
 
-
+#===================Front====================
 calc.config(bg="white")
 F1 = Frame(calc, width=350, height=50)
 F1.pack()
@@ -144,7 +172,7 @@ sulemanjan = Label(text="", bg="white")
 # now = Label(calc, image=Img1, bg="white", ).place(x=110, y=150)
 
 # ---------------------Buttons--------------------------
-one = Button(calc, text="1", width=9, height=3, command=lambda: button1())
+one = Button(calc, text="1", width=9, height=3, command=button1)
 two = Button(calc, text="2", width=9, height=3, command=button2)
 three = Button(calc, text="3", width=9, height=3, command=button3)
 four = Button(calc, text="4", width=9, height=3, command=button4)
@@ -154,9 +182,9 @@ seven = Button(calc, text="7", width=9, height=3, command=button7)
 eight = Button(calc, text="8", width=9, height=3, command=button8)
 nine = Button(calc, text="9", width=9, height=3, command=button9)
 zero = Button(calc, text="0", width=9, height=3, command=button0)
-point = Button(calc, text=".", width=9, height=3)
-plusmines = Button(calc, text="+_", width=9, height=3)
-average = Button(calc, text="%", width=9, height=3,command=percentage)
+point = Button(calc, text=".", width=9, height=3,command=adds)
+plusmines = Button(calc, text="+_", width=9, height=3, command=mines)
+average = Button(calc, text="%", width=9, height=3, command=percentage)
 backspace = Button(calc, text="backspace", width=9, height=3)
 C = Button(calc, text="C", width=9, height=3, command=delete)
 
@@ -166,7 +194,7 @@ multi = Button(calc, text="X", width=13, height=3, command=multiple)
 divide = Button(calc, text="/", width=13, height=3, command=divide)
 
 
-equal = Button(calc, text="=", width=13, height=3, command=lambda: equals())
+equal = Button(calc, text="=", width=13, height=3, command=equals)
 equal.config(bg="#EEE", activebackground="GRAY")
 equal.pack()
 
